@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurants Page</title>
+
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/img/Grubit-logo.png" />
+
+    <!-- Bootstrap Icons-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+
+    <!--Testimonial Scripts-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!--  -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous"
+    ></script>
+
+    <!--CSS file-->
+    <!-- <link href="css/styles.css" rel="stylesheet" /> -->
+    <link href="css/restaurant.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation-->
+    <nav
+      class="navbar navbar-expand-lg navbar-light fixed-top py-1"
+      id="mainNav"
+    >
+      <div class="container-fluid px-4">
+        <a class="navbar-brand" href="#page-top">
+          <img src="assets/img/Grubit-logos_black.png" height="60" />
+          <a id="logo_text"> Grubit</a>
+        </a>
+        <button
+          class="navbar-toggler navbar-toggler-right"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ms-auto my-2 my-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#about">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdownMenuLink"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Products
+              </a>
+              <div
+                class="dropdown-menu"
+                aria-labelledby="navbarDropdownMenuLink"
+              >
+                <a class="dropdown-item" href="#">Resturant Bookings</a>
+                <a class="dropdown-item" href="#">Club Bookings</a>
+                <a class="dropdown-item" href="#">Customized Meal Options</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="signIn.html"
+                ><i class="bi bi-person-fill pe-2"></i>Login</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasRight"
+                aria-controls="offcanvasRight"
+                ><i class="bi bi-cart"></i
+                ><span
+                  class="position-absolute start-80 translate-middle badge rounded-pill bg-danger"
+                >
+                  0
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div
+      class="offcanvas offcanvas-end"
+      tabindex="-1"
+      id="offcanvasRight"
+      aria-labelledby="offcanvasRightLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasRightLabel">Basket</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">Empty Cart !</div>
+    </div>
+
+    <!-- Restaurants -->
+    <section class="restaurants mb-5">
+      <div class="restaurant-title mt-5 mb-5 p-sm-5">
+        <h2 class="mb-0">Popular Restaurants</h2>
+      </div>
+
+      <div class="container">
+
+        <div class="row gy-5">
+            <div class="col-xl-3 col-lg-4 col-md-6 d-flex justify-content-center">
+                    <div class="card" style="width: 18rem">
+                    <img
+                        src="/assets/img/restaurant 1.jpg"
+                        class="card-img-top"
+                        alt="Card01"
+                    />
+                    <div class="card-body">
+                        <h5 class="card-title">Da Alfredo</h5>
+                        <p class="card-text">243 Dorchester St</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <!-- Card 2 -->
+            
+                <div class="col-xl-3 col-lg-4 col-md-6 d-flex justify-content-center">
+                    <div class="card" style="width: 18rem">
+                    <img
+                        src="/assets/img/restaurant 2.jpg"
+                        class="card-img-top"
+                        alt="Card02"
+                    />
+                    <div class="card-body">
+                        <h5 class="card-title">Best Burghers</h5>
+                        <p class="card-text">132 Brookline Ave</p>
+                        <!-- <a href="#" class="btn btn-primary">Click here</a> -->
+                    </div>
+                    </div>
+                </div>
+           
+          <!-- Card 3 -->
+            
+                <div class="col-xl-3 col-lg-4 col-md-6 d-flex justify-content-center">
+                    <div class="card" style="width: 18rem">
+                    <img
+                        src="/assets/img/restaurant 3.jpg"
+                        class="card-img-top"
+                        alt="Card03"
+                    />
+                    <div class="card-body">
+                        <h5 class="card-title">Vego Life</h5>
+                        <p class="card-text">431 Boylston St</p>
+                        <!-- <a href="#" class="btn btn-primary">Click here</a> -->
+                    </div>
+                    </div>
+                </div>
+           
+          <!-- Card 4 -->
+          
+                <div class="col-xl-3 col-lg-4 col-md-6 d-flex justify-content-center">
+                    <div class="card" style="width: 18rem">
+                    <img
+                        src="/assets/img/restaurant 4.jpg"
+                        class="card-img-top"
+                        alt="Card04"
+                    />
+                    <div class="card-body">
+                        <h5 class="card-title">Sushi Temple</h5>
+                        <p class="card-text">737 Huntington Ave</p>
+                        <!-- <a href="#" class="btn btn-primary">Click here</a> -->
+                    </div>
+                    </div>
+                </div>
+           
+          <!-- Card 5 -->
+            
+                <div class="col-xl-3 col-lg-4 col-md-6 d-flex justify-content-center">
+                    <div class="card" style="width: 18rem">
+                    <img
+                        src="/assets/img/restaurant 5.jpg"
+                        class="card-img-top"
+                        alt="Card05"
+                    />
+                    <div class="card-body">
+                        <h5 class="card-title">LaBarra</h5>
+                        <p class="card-text">23 Bow St</p>
+                        <!-- <a href="#" class="btn btn-primary">Click here</a> -->
+                    </div>
+                    </div>
+                </div>
+           
+          <!-- Card 6 -->
+            
+                <div class="col-xl-3 col-lg-4 col-md-6 d-flex justify-content-center">
+                    <div class="card" style="width: 18rem">
+                    <img
+                        src="/assets/img/Restaurant-6.jpg"
+                        class="card-img-top"
+                        alt="Card06"
+                    />
+                    <div class="card-body">
+                        <h5 class="card-title">Halftime Pizza</h5>
+                        <p class="card-text">115 Causeway St</p>
+                        <!-- <a href="#" class="btn btn-primary">Click here</a> -->
+                    </div>
+                    </div>
+                </div>
+            
+          
+          <!-- Card 7 -->
+            
+                <div class="col-xl-3 col-lg-4 col-md-6 d-flex justify-content-center">
+                    <div class="card" style="width: 18rem">
+                    <img
+                        src="/assets/img/Restaurant-7.jpg"
+                        class="card-img-top"
+                        alt="Card07"
+                    />
+                    <div class="card-body">
+                        <h5 class="card-title">Burger Palace</h5>
+                        <p class="card-text">745 Huntington Ave</p>
+                        <!-- <a href="#" class="btn btn-primary">Click here</a> -->
+                    </div>
+                    </div>
+                </div>
+           
+          <!-- Card 8 -->
+            
+                <div class="col-xl-3 col-lg-4 col-md-6 d-flex justify-content-center">
+                    <div class="card" style="width: 18rem">
+                    <img
+                        src="/assets/img/Restaurant-8.jpg"
+                        class="card-img-top"
+                        alt="Card08"
+                    />
+                    <div class="card-body">
+                        <h5 class="card-title">Tandoori</h5>
+                        <p class="card-text">115 Sommerville</p>
+                        <!-- <a href="#" class="btn btn-primary">Click here</a> -->
+                    </div>
+                    </div>
+                </div>
+           
+        </div>
+      </div>
+    </section>
+
+    <!-- City Night Clubs -->
+    <section class="mb-5">
+      <div class="club-title mt-5 mb-5 p-sm-5">
+        <h2 class="mb-0">City Night Clubs</h2>
+      </div>
+      <div class="container">
+        <div class="row gy-5 ">
+
+          <div class="col-xl-3 col-lg-4 col-md-6 d-flex justify-content-center">
+            <div class="card" style="width: 18rem">
+              <img
+                src="/assets/img/Club-1.jpeg"
+                class="card-img-top"
+                alt="Card01"
+              />
+              <div class="card-body">
+                <h5 class="card-title">The Grand</h5>
+                <p class="card-text">58 Seaport Blvd. Boston 02210</p>
+                <!-- <a href="#" class="btn btn-primary">Click here</a> -->
+              </div>
+            </div>
+          </div> 
+          <div class="col-xl-3 col-lg-4 col-md-6 d-flex justify-content-center">
+            <div class="card" style="width: 18rem">
+              <img
+                src="/assets/img/Club-2.jpeg"
+                class="card-img-top"
+                alt="Card02"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Club Café</h5>
+                <p class="card-text">209 Columbus Avenue Boston</p>
+                <!-- <a href="#" class="btn btn-primary">Click here</a> -->
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-4 col-md-6 d-flex justify-content-center">
+            <div class="card" style="width: 18rem">
+              <img
+                src="/assets/img/Club-3.jpeg"
+                class="card-img-top"
+                alt="Card03"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Encore Boston Harbor</h5>
+                <p class="card-text">1 Broadway Everett 02149</p>
+                <!-- <a href="#" class="btn btn-primary">Click here</a> -->
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-4 col-md-6 d-flex justify-content-center">
+            <div class="card" style="width: 18rem">
+              <img
+                src="/assets/img/Club-4.jpeg"
+                class="card-img-top"
+                alt="Card04"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Royale</h5>
+                <p class="card-text">279 Tremont St Boston 02116</p>
+                <!-- <a href="#" class="btn btn-primary">Click here</a> -->
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-4 col-md-6 d-flex justify-content-center">
+            <div class="card" style="width: 18rem">
+              <img
+                src="/assets/img/Club-5.jpeg"
+                class="card-img-top"
+                alt="Card05"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Big Night Live</h5>
+                <p class="card-text">110 Causeway St Boston 02114</p>
+                <!-- <a href="#" class="btn btn-primary">Click here</a> -->
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-4 col-md-6 d-flex justify-content-center">
+            <div class="card" style="width: 18rem">
+              <img
+                src="/assets/img/Club-6.jpeg"
+                class="card-img-top"
+                alt="Card06"
+              />
+              <div class="card-body">
+                <h5 class="card-title">The Beehive</h5>
+                <p class="card-text">541 Tremont St Boston 02116</p>
+                <!-- <a href="#" class="btn btn-primary">Click here</a> -->
+              </div>
+            </div>
+          </div>
+          <!--end of card 6-->
+          <div class="col-xl-3 col-lg-4 col-md-6 d-flex justify-content-center">
+            <div class="card" style="width: 18rem">
+              <img
+                src="/assets/img/Club-7.jpeg"
+                class="card-img-top"
+                alt="Card07"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Venu</h5>
+                <p class="card-text">100 Warrenton St Boston 02116</p>
+                <!-- <a href="#" class="btn btn-primary">Click here</a> -->
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-4 col-md-6 d-flex justify-content-center">
+            <div class="card" style="width: 18rem">
+              <img
+                src="/assets/img/Club-8.jpeg"
+                class="card-img-top"
+                alt="Card08"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Hava</h5>
+                <p class="card-text">246 Tremont St Boston 02116</p>
+                <!-- <a href="#" class="btn btn-primary">Click here</a> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Footer Start-->
+        <footer id="footer">
+          <div class="footer-top">
+            <div class="container">
+              <div class="row">
+                <div class="col-xl-3 col-lg-4 col-md-6 footer-info">
+                  <h3>GrubIt</h3>
+                  <p>
+                    GrubIt is food Ordering Web Application.It provide various
+                    restaurants options providing delivery options as well as
+                    online table booking.
+                  </p>
+                  <div class="social-links mt-5">
+                    <a
+                      href="https://www.twitter.com"
+                      target="_blank"
+                      class="twitter"
+                      ><i class="bi bi-twitter"></i
+                    ></a>
+                    <a
+                      href="https://www.facebook.com"
+                      target="_blank"
+                      class="facebook"
+                      ><i class="bi bi-facebook"></i
+                    ></a>
+                    <a
+                      href="https://www.instagram.com"
+                      target="_blank"
+                      class="instagram"
+                      ><i class="bi bi-instagram"></i
+                    ></a>
+                    <a
+                      href="https://www.whatsapp.com"
+                      target="_blank"
+                      class="whatsapp"
+                      ><i class="bi bi-whatsapp"></i
+                    ></a>
+                  </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-md-6 footer-links">
+                  <h4>Useful Links</h4>
+                  <ul>
+                    <li>
+                      <i class="bi bi-chevron-double-right"></i
+                      ><a href="#">Home</a>
+                    </li>
+                    <li>
+                      <i class="bi bi-chevron-double-right"></i
+                      ><a href="#">About us</a>
+                    </li>
+                    <li>
+                      <i class="bi bi-chevron-double-right"></i
+                      ><a href="#">Pricing</a>
+                    </li>
+                    <li>
+                      <i class="bi bi-chevron-double-right"></i
+                      ><a href="#">Menu</a>
+                    </li>
+                    <li>
+                      <i class="bi bi-chevron-double-right"></i
+                      ><a href="#">Contact Us</a>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-md-6 footer-contact">
+                  <h4>Get in Touch</h4>
+                  <ul>
+                    <li>
+                      <i class="bi bi-geo-alt-fill"></i>A108 Adam Street <br />
+                      New York, NY 535022<br />
+                      United States <br />
+                    </li>
+                    <li>
+                      <i class="bi bi-telephone"></i><strong>Phone:</strong> +1
+                      (558)-554-5588<br />
+                    </li>
+                    <li>
+                      <i class="bi bi-envelope"></i
+                      ><strong>Email:</strong> info@example.com<br />
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-md-6 footer-newsletter">
+                  <h4>Subscribe</h4>
+                  <p>
+                    Subscribe Now to get latest deals and offers! Get upto 50%
+                    off your next order when you subscribe!
+                  </p>
+                  <form action="" method="post">
+                    <input type="email" name="email" /><input
+                      type="submit"
+                      value="Subscribe"
+                    />
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container">
+            <div class="copyright">
+              &copy; Copyright 2022 <strong><span>GrubIt</span></strong
+              >. All Rights Reserved.
+            </div>
+          </div>
+        </footer>
+       
+    </div>
+  </body>
+</html>

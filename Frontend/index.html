@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Food Delivery Web Application</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/img/Grubit-logo.png" />
+    <!-- Bootstrap Icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+
+    <!--Testimonial Scripts-->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js'></script>
+    <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js'></script>
+
+
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-1" id="mainNav">
+        <div class="container px-4">
+            <a class="navbar-brand" href="#page-top">
+                <img src="assets/img/Grubit-logos_black.png" height="60">
+                <a id="logo_text"> Grubit</a>
+            </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto my-2 my-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Products
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#">Resturant Bookings</a>
+                            <a class="dropdown-item" href="#">Club Bookings</a>
+                            <a class="dropdown-item" href="#">Customized Meal Options</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="signIn.html"><i class="bi bi-person-fill pe-2"></i>Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                            aria-controls="offcanvasRight"><i class="bi bi-cart"></i><span
+                                class="position-absolute start-80 translate-middle badge rounded-pill bg-danger">
+                                0
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasRightLabel">Basket</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            Empty Cart !
+        </div>
+    </div>
+
+    </ul>
+    </div>
+    </div>
+    </nav>
+    <!-- Hero-->
+    <section id="hero" class="hero d-flex align-items-center section-bg">
+        <div class="container">
+
+            <div class="row justify-content-between gy-5">
+                <div
+                    class="col-lg-5 order-2 order-lg-1 d-flex flex-column justify-content-center align-items-center align-items-lg-start text-center text-lg-start">
+                    <div class="wrapper">
+                        <ul class="dynamic-txts">
+                            <li><span>Eat Fresh.</span></li>
+                            <li><span>Eat Delicious.</span></li>
+                            <li><span>Grub it Fast.</span></li>
+                        </ul>
+                    </div>
+                    <h4>Discover your healthy delicious meals daily!</h4>
+
+                    <div class="d-flex">
+                        <a href="#book-a-table" class="btn-book-a-table">Book a Table</a>
+                    </div>
+                </div>
+                <div class="col-lg-5 order-1 order-lg-2 text-center text-lg-start">
+                    <img src="https://bootstrapmade.com/demo/templates/Yummy/assets/img/hero-img.png"
+                        class="hero-image img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <main>
+        <!-- ======= Call To Action Section ======= -->
+        <section id="call-to-action" class="call-to-action">
+            <div class="container" data-aos="zoom-out">
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h3>HOT Deal of the Day</h3>
+                        <p>We deliver what we promise. The results of our clientele is of utmost importance to us. </p>
+                        <a class="cta-btn" id="liveToastBtn">Order Now</a>
+                    </div>
+                </div>
+
+                <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-header">
+                            <strong class="me-auto">Order Confirmation</strong>
+                            <small> 1 min ago</small>
+                            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                        <div class="toast-body">
+                            Your order has been confirmed!
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+        <!-- End Call To Action Section -->
+
+        <!--- Cards---->
+
+        <div id="section01" class="container">
+            <div class="section-title mt-5 mb-0">
+                <h2 class="mb-0">Why Choose Us</h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="card border-0">
+
+                        <div class="image_icon">
+                            <!-- <img src="https://demo.voidcoders.com/foodfly/wp-content/uploads/sites/18/2022/03/feature_icon3.svg" -->
+                                <!-- class="card-img-top" alt="delivery"> -->
+                            <img src="/assets/img/step3.png" class="card-img-top" alt="delivery">
+                        </div>
+
+                        <div class="card-body">
+                            <h5 class="card-title">Free & Fast Delivery</h5>
+
+                            <!-- <a href="#" class="btn btn-primary">Click here</a> -->
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card border-0">
+                        <div class="image_icon">
+                            <!-- <img src="https://demo.voidcoders.com/foodfly/wp-content/uploads/sites/18/2022/03/feature_icon22.svg"
+                                class="card-img-top" alt="..."> -->
+
+                                <img src="/assets/img/step2.png" class="card-img-top" alt=" Best Food Quality">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Best Food Quality</h5>
+
+                            <!-- <a href="#" class="btn btn-primary">Click here</a> -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card border-0">
+
+                        <div class="image_icon">
+                            <!-- <img src="https://demo.voidcoders.com/foodfly/wp-content/uploads/sites/18/2022/03/feature_icon.svg"
+                                class="card-img-top" alt="..."> -->
+                            
+                            <img src="/assets/img/step1.png" class="card-img-top" alt="Easy to Order">
+
+                        </div>
+
+                        <div class="card-body">
+                            <h5 class="card-title">Easy to Order</h5>
+
+                            <!--<a href="#" class="btn btn-primary">Go somewhere</a>-->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!--End of Cards-->
+
+
+
+        <!--Testimonial Carousel-->
+        <section class="testimonial">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-lg-6 d-none d-lg-block">
+                        <ol class="carousel-indicators tabs">
+                            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active">
+                                <figure>
+                                    <img src="https://livedemo00.template-help.com/wt_62267_v8/prod-20823-one-service/images/testimonials-01-179x179.png"
+                                        class="img-fluid" alt="">
+                                </figure>
+                            </li>
+                            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1">
+                                <figure>
+                                    <img src="https://livedemo00.template-help.com/wt_62267_v8/prod-20823-one-service/images/testimonials-02-306x306.png"
+                                        class="img-fluid" alt="">
+                                </figure>
+                            </li>
+                            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2">
+                                <figure>
+                                    <img src="https://livedemo00.template-help.com/wt_62267_v8/prod-20823-one-service/images/testimonials-03-179x179.png"
+                                        class="img-fluid" alt="">
+                                </figure>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                        <div id="carouselExampleIndicators" data-bs-interval="false" class="carousel slide"
+                            data-bs-ride="carousel">
+                            <h3>WHAT OUR CLIENTS SAY</h3>
+                            <h1>TESTIMONIALS</h1>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="quote-wrapper">
+                                        <p>I have tried a lot of food delivery services but Plate is something out of
+                                            this
+                                            world! Their food is really healthy and it tastes great, which is why I
+                                            recommend this company to all my friends!</p>
+                                        <h3>Lindsay Harrop</h3>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="quote-wrapper">
+                                        <p>Good quality, and a nice variety of menu items available. I love that I can
+                                            communicate what ingredients i need left out. I love this service!</p>
+                                        <h3>Amanda Webb</h3>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="quote-wrapper">
+                                        <p>I’m a business owner who lives a very hectic life, but I’m invested in my
+                                            health
+                                            and work out 6 times a week. This service ensures I don’t miss meals and
+                                            puts
+                                            extremely healthy food into my system.</p>
+                                        <h3>Peter Lee</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <ol class="carousel-indicators indicators">
+                                <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active">
+                                </li>
+                                <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
+                                <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Accordian FAQ's-->
+        <section id="faq" class="faq">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>Frequently Asked Questions</h2>
+                </div>
+
+                <ul class="faq-list accordion" data-aos="fade-up">
+
+                    <li>
+                        <a data-bs-toggle="collapse" class="collapsed" data-bs-target="#faq1">Non consectetur a erat nam
+                            at lectus urna duis? <i class="bi bi-chevron-down icon-show"></i><i
+                                class="bi bi-chevron-up icon-close"></i></a>
+                        <div id="faq1" class="collapse" data-bs-parent=".faq-list">
+                            <p>
+                                Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non
+                                curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus
+                                non.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a data-bs-toggle="collapse" data-bs-target="#faq2" class="collapsed">Feugiat scelerisque varius
+                            morbi enim nunc faucibus a pellentesque? <i class="bi bi-chevron-down icon-show"></i><i
+                                class="bi bi-chevron-up icon-close"></i></a>
+                        <div id="faq2" class="collapse" data-bs-parent=".faq-list">
+                            <p>
+                                Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum
+                                velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec
+                                pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus
+                                turpis massa tincidunt dui.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a data-bs-toggle="collapse" data-bs-target="#faq3" class="collapsed">Dolor sit amet consectetur
+                            adipiscing elit pellentesque habitant morbi? <i class="bi bi-chevron-down icon-show"></i><i
+                                class="bi bi-chevron-up icon-close"></i></a>
+                        <div id="faq3" class="collapse" data-bs-parent=".faq-list">
+                            <p>
+                                Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus
+                                pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum
+                                tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna
+                                molestie at elementum eu facilisis sed odio morbi quis
+                            </p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a data-bs-toggle="collapse" data-bs-target="#faq4" class="collapsed">Ac odio tempor orci
+                            dapibus. Aliquam eleifend mi in nulla? <i class="bi bi-chevron-down icon-show"></i><i
+                                class="bi bi-chevron-up icon-close"></i></a>
+                        <div id="faq4" class="collapse" data-bs-parent=".faq-list">
+                            <p>
+                                Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum
+                                velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec
+                                pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus
+                                turpis massa tincidunt dui.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a data-bs-toggle="collapse" data-bs-target="#faq5" class="collapsed">Tempus quam pellentesque
+                            nec nam aliquam sem et tortor consequat? <i class="bi bi-chevron-down icon-show"></i><i
+                                class="bi bi-chevron-up icon-close"></i></a>
+                        <div id="faq5" class="collapse" data-bs-parent=".faq-list">
+                            <p>
+                                Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est
+                                ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit
+                                adipiscing bibendum est. Purus gravida quis blandit turpis cursus in
+                            </p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a data-bs-toggle="collapse" data-bs-target="#faq6" class="collapsed">Tortor vitae purus
+                            faucibus ornare. Varius vel pharetra vel turpis nunc eget lorem dolor? <i
+                                class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></a>
+                        <div id="faq6" class="collapse" data-bs-parent=".faq-list">
+                            <p>
+                                Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo
+                                integer malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc
+                                eget lorem dolor sed. Ut venenatis tellus in metus vulputate eu scelerisque.
+                                Pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus faucibus.
+                                Nibh tellus molestie nunc non blandit massa enim nec.
+                            </p>
+                        </div>
+                    </li>
+
+                </ul>
+
+            </div>
+        </section>
+        <section id="contact" class="contact mt-5 mb-5">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Contact</h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 mt-5 mt-lg-0 d-flex align-items-stretch">
+                        <form action="" method="post" role="form" class="contact-form">
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label for="name">Your Name</label>
+                                    <input type="text" name="name" class="form-control" id="name" required>
+                                </div>
+                                <div class="form-group col-md-6 mt-3 mt-md-0">
+                                    <label for="name">Your Email</label>
+                                    <input type="email" class="form-control" name="email" id="email" required>
+                                </div>
+                            </div>
+                            <div class="form-group mt-3">
+                                <label for="name">Subject</label>
+                                <input type="text" class="form-control" name="subject" id="subject">
+                            </div>
+                            <div class="form-group mt-3">
+                                <label for="name">Message</label><textarea class="form-control" name="message" rows="10"
+                                    required=""></textarea>
+                            </div>
+                            <div class="text-center mt-4">
+                                <button type="submit" data-bs-toggle="modal" data-bs-target="#exampleModal">Send
+                                    Message</button>
+                            </div>
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Contact Us</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Thank you for contacting us. We will get back to you soon!
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!--Footer Start-->
+    <footer id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-md-6 footer-info">
+                        <h3>GrubIt</h3>
+                        <p>GrubIt is food Ordering Web Application.It provide various restaurants options providing
+                            delivery options as well as online table booking. </p>
+                        <div class="social-links mt-5">
+                            <a href="https://www.twitter.com" target="_blank" class="twitter"><i
+                                    class="bi bi-twitter"></i></a>
+                            <a href="https://www.facebook.com" target="_blank" class="facebook"><i
+                                    class="bi bi-facebook"></i></a>
+                            <a href="https://www.instagram.com" target="_blank" class="instagram"><i
+                                    class="bi bi-instagram"></i></a>
+                            <a href="https://www.whatsapp.com" target="_blank" class="whatsapp"><i
+                                    class="bi bi-whatsapp"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li><i class="bi bi-chevron-double-right"></i><a href="#">Home</a></li>
+                            <li><i class="bi bi-chevron-double-right"></i><a href="#">About us</a></li>
+                            <li><i class="bi bi-chevron-double-right"></i><a href="#">Pricing</a></li>
+                            <li><i class="bi bi-chevron-double-right"></i><a href="#">Menu</a></li>
+                            <li><i class="bi bi-chevron-double-right"></i><a href="#">Contact Us</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-contact">
+                        <h4>Get in Touch</h4>
+                        <ul>
+                            <li><i class="bi bi-geo-alt-fill"></i>A108 Adam Street <br>
+                                New York, NY 535022<br>
+                                United States <br></li>
+                            <li><i class="bi bi-telephone"></i><strong>Phone:</strong> +1 (558)-554-5588<br></li>
+                            <li><i class="bi bi-envelope"></i><strong>Email:</strong> info@example.com<br></li>
+                        </ul>
+
+
+
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-newsletter">
+                        <h4>Subscribe</h4>
+                        <p>Subscribe Now to get latest deals and offers! Get upto 50% off your next order when you
+                            subscribe!</p>
+                        <form action="" method="post">
+                            <input type="email" name="email"><input type="submit" value="Subscribe">
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="copyright">
+                &copy; Copyright 2022 <strong><span>GrubIt</span></strong>. All Rights Reserved.
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>

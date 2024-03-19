@@ -1,0 +1,62 @@
+/* Restaurants CSS */
+
+
+.section-title {
+    text-align: center;
+    padding-bottom: 30px;
+    position: relative;
+  }
+  
+  .section-title h2 {
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    position: relative;
+  }
+  
+  .section-title h2::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #ce1212;
+    bottom: 0;
+    left: calc(50% - 25px);
+  }
+  
+
+.restaurants .restaurant-title h2 {
+    text-align: center;
+    size: 100px;
+}
+
+.restaurants .club-title h2 {
+    text-align: center;
+    size: 100px;
+}
+
+.restaurants .card img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.restaurants  .card {
+    display: inline-block;
+    background-color: #fff;
+    background-clip: border-box;
+    border: none !important;
+    box-shadow: -1px 0px 5px 5px rgb(209 203 203 / 34%);
+    border-radius: 10px;
+}
+
+.restaurants  .card:hover,
+.restaurants  .card:focus {
+    transform: scale(1.05);
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}

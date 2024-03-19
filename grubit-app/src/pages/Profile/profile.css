@@ -1,0 +1,86 @@
+.profile {
+    margin-top: 120px;
+    margin-bottom: 50px;
+}
+
+.profile-card {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 12px 9px rgb(161 151 151 / 15%);
+}
+
+.profile-form-wrap .profile-title h2 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #252525;
+}
+
+.profile-form-wrap .form-field {
+    margin: 10px 0;
+}
+
+.profile-form-wrap .form-control {
+    outline: none;
+    box-shadow: none;
+    border: 1px solid #F2F2F2 !important;
+    color: #262626;
+    width: 100%;
+    height: 52px;
+    font-size: 14px;
+}
+
+
+.profile-form-wrap .form-control:focus,
+.profile-form-wrap .form-control:active {
+    outline: none !important;
+    box-shadow: none !important;
+    border: 2px solid #ce1212 !important;
+}
+
+.profile-button {
+    background: #ce1212 !important;
+    border: 1px solid #ce1212 !important;
+    color: #fff !important;
+    padding: 10px 50px;
+    font-size: 16px !important;
+}
+
+.profile-button:hover {
+    background: #fff !important;
+    border: 1px solid #ce1212 !important;
+    color: #ce1212 !important;
+}
+
+.shop-cart .section-wrapper .cart-top {
+    margin-bottom: 40px;
+    box-shadow: 0 0 10px rgb(136 136 136 / 10%);
+}
+
+.shop-cart .section-wrapper .cart-top table {
+    font-weight: 600;
+    width: 100%;
+}
+
+.shop-cart .section-wrapper .cart-top table thead tr th {
+    background: #fb524f;
+    color: #fff;
+    padding: 18px;
+    border: none;
+}
+
+.shop-cart .section-wrapper .cart-top table tbody tr {
+    border-bottom: 1px solid #e6e6e6;
+    border-right: none;
+    border-left: none;
+    border-top: none;
+}
+
+.shop-cart .section-wrapper .cart-top table tbody tr th {
+    padding: 20px auto;
+}
+
+.shop-cart .section-wrapper .cart-top table tbody tr td {
+    padding: 20px;
+    border: none;
+}
