@@ -5,13 +5,17 @@ var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var mongoose = require('mongoose');
 var cors = require('cors');
+const dotenv = require('dotenv');
+
+//Load the environment configuration
+dotenv.config();
+var mongoUrl = process.env.MONGODB_URL;
 
 //configuration for port
-var port = process.env.PORT || 8080;
+var port = process.env.PORT;
 
 //connect to mongodb database
-
-mongoose.connect('mongodb://localhost:27017', { useNewUrlParser: true });
+mongoose.connect(mongoUrl, { useNewUrlParser: true }).catch(error => console.error(error));
 
 app.use(
     cors({
