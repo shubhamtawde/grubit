@@ -98,7 +98,8 @@ module.exports = function (app) {
 
   app.post("/api/displayName", function (req, res) {
     var token = req.headers.cookie;
-    var newT = token.split("=");
+    var newT = token.split(";");
+    console.log(newT);
     var actualToken = newT[1];
     console.log("Actual Token : " + actualToken);
     try {
@@ -239,7 +240,7 @@ module.exports = function (app) {
       });
     } else {
       var query = { email: req.body.email };
-      //check if user with given email exists ot nor
+      //check if user with given email exists or not
       User.findOne(query, function (err, user) {
         if (err) {
           res.json({ status: "error", error: err });
@@ -288,13 +289,12 @@ module.exports = function (app) {
   //signUp route
   app.post("/api/insert", function (req, res) {
     console.log(req.body);
-    // var regexEmail = /[a-z0-9]+@northeastern.edu/;
-    var regexPwd =
-      /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%&*]).{8,}$/;
+
     // var regExName = /^[a-zA-Z]+$/;
     var regExPhone =
       /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
 
+    // var regexEmail = /[a-z0-9]+@northeastern.edu/;
     var regexEmail =
       /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
     var regExName = /(?![\s.]+$)/;
@@ -304,7 +304,6 @@ module.exports = function (app) {
     var fname = req.body.fname;
     var lname = req.body.lname;
     var phone = req.body.phone;
-    // var address = req.body.address;
     var query = { email: req.body.email };
     if (!fname.match(regExName)) {
       res.json({ status: "error", error: "Name is in invalid format" });
@@ -312,12 +311,6 @@ module.exports = function (app) {
       res.json({
         status: "error",
         error: "Email is in invalid format, use northeastern.edu format",
-      });
-    } else if (!pass.match(regexPwd)) {
-      res.json({
-        status: "error",
-        error:
-          "Password is in invalid format, follow password rules : 1 Uppercase Character, 1 lower character, 1 special character, 1 digit and minimum 8 characters",
       });
     } else if (!phone.match(regExPhone)) {
       res.json({
@@ -333,22 +326,18 @@ module.exports = function (app) {
         if (count == 1) {
           res.json({ status: "error", error: "Email Id Exists!" });
         } else {
-          bcrypt.genSalt(saltRounds, function (err, salt) {
-            bcrypt.hash(req.body.password, salt, function (err, hash) {
-              var record = new User({
-                fname: req.body.fname,
-                lname: req.body.lname,
-                email: req.body.email,
-                password: hash,
-                phone: req.body.phone,
-              });
-              record.save(function (err, rec) {
-                if (err) {
-                  console.log("Saved " + rec);
-                  res.json({ status: "error", error: err });
-                } else res.json({ status: "ok", data: "User Created Successfully" });
-              });
-            });
+          var record = new User({
+            fname: req.body.fname,
+            lname: req.body.lname,
+            email: req.body.email,
+            password: req.body.password,
+            phone: req.body.phone,
+          });
+          record.save(function (err, rec) {
+            if (err) {
+              console.log("Saved " + rec);
+              res.json({ status: "error", error: err });
+            } else res.json({ status: "ok", data: "User Created Successfully" });
           });
         }
       });

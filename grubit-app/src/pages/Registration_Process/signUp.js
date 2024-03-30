@@ -1,7 +1,11 @@
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, {useState} from "react";
+import {Link, useNavigate} from "react-router-dom";
 import './style.css';
 import $ from 'jquery';
+
+const bcrypt = require('bcryptjs');
+
+const saltRounds = 10;
 
 function SignUp() {
     const navigate = useNavigate();
@@ -18,47 +22,49 @@ function SignUp() {
 
     function signUp(e) {
         e.preventDefault();
-        console.log(form.email, form.password);
         var email = form.email;
         var password = form.password;
         var ConfirmPass = form.ConfirmPass;
         var fname = form.fname;
         var lname = form.lname;
         var phone = form.phone;
-        console.log(password);
-        console.log(phone);
 
         if (password != ConfirmPass) {
             alert("Password and Confirm password are not same");
-        }
-        else {
-            fetch(URL, {
-                method: "POST",
-                crossDomain: false,
-                headers: {
-                    "Content-Type": "application/json",
-                    "Accept": "application/json",
-                    "Access-Control-Allow-Origin": "*",
-                },
-                body: JSON.stringify({
-                    email,
-                    password,
-                    fname,
-                    lname,
-                    phone
-                }),
-            })
-                .then((res) => res.json())
-                .then((data) => {
-                    console.log(data);
-                    if (data.status == "ok") {
-                        alert("Sign Up Successful! Welcome ");
-                        navigate("/");
-                    }
-                    else {
-                        alert(data.error);
-                    }
+        } else {
+            bcrypt.genSalt(saltRounds, function (err, salt) {
+                bcrypt.hash(form.password, salt, function (err, password) {
+                    console.log("Encrypted Password: " + password);
+                    fetch(URL, {
+                        method: "POST",
+                        crossDomain: false,
+                        headers: {
+                            "Content-Type": "application/json",
+                            "Accept": "application/json",
+                            "Access-Control-Allow-Origin": "*",
+                        },
+                        body: JSON.stringify({
+                            email,
+                            password,
+                            fname,
+                            lname,
+                            phone
+                        }),
+                    })
+                        .then((res) => res.json())
+                        .then((data) => {
+                            console.log(data);
+                            if (data.status == "ok") {
+                                alert("Sign Up Successful! Welcome ");
+                                navigate("/");
+                            } else {
+                                alert(data.error);
+                            }
+                        });
                 });
+            });
+
+
         }
 
     }
@@ -69,27 +75,27 @@ function SignUp() {
         let value = e.target.value;
 
         if (name == "email") {
-            setForm({ ...form, email: value });
+            setForm({...form, email: value});
         }
 
         if (name == "password") {
-            setForm({ ...form, password: value });
+            setForm({...form, password: value});
         }
         if (name == "ConfirmPass") {
-            setForm({ ...form, ConfirmPass: value });
+            setForm({...form, ConfirmPass: value});
         }
 
 
         if (name == "fname") {
-            setForm({ ...form, fname: value });
+            setForm({...form, fname: value});
         }
 
         if (name == "lname") {
-            setForm({ ...form, lname: value });
+            setForm({...form, lname: value});
         }
 
         if (name == "phone") {
-            setForm({ ...form, phone: value });
+            setForm({...form, phone: value});
         }
     };
     const passwordClick = (e) => {
@@ -120,41 +126,55 @@ function SignUp() {
                                     <div className="row">
                                         <div className="col-lg-6">
                                             <div className="form-group mt-3">
-                                                <label className="form-control-placeholder" for="firstname">First Name</label>
-                                                <input type="text" className="form-control" name="fname" required onChange={(e) => handleChange(e)} />
+                                                <label className="form-control-placeholder" for="firstname">First
+                                                    Name</label>
+                                                <input type="text" className="form-control" name="fname" required
+                                                       onChange={(e) => handleChange(e)}/>
                                             </div>
                                         </div>
                                         <div className="col-lg-6">
                                             <div className="form-group mt-3">
-                                                <label className="form-control-placeholder" for="lastname">Last Name</label>
-                                                <input type="text" className="form-control" name="lname" required onChange={(e) => handleChange(e)} />
+                                                <label className="form-control-placeholder" for="lastname">Last
+                                                    Name</label>
+                                                <input type="text" className="form-control" name="lname" required
+                                                       onChange={(e) => handleChange(e)}/>
                                             </div>
                                         </div>
                                     </div>
                                     <div className="form-group mt-0">
                                         <label className="form-control-placeholder" for="email">Email</label>
-                                        <input type="email" className="form-control" name="email" required onChange={(e) => handleChange(e)} />
+                                        <input type="email" className="form-control" name="email" required
+                                               onChange={(e) => handleChange(e)}/>
                                     </div>
                                     <div className="form-group mt-3">
                                         <label className="form-control-placeholder" for="number">Phone Number</label>
-                                        <input type="number" className="form-control" name="phone" required onChange={(e) => handleChange(e)} />
+                                        <input type="number" className="form-control" name="phone" required
+                                               onChange={(e) => handleChange(e)}/>
                                     </div>
                                     <div className="form-group">
-                                        <label className="form-control-placeholder" for="password">Create New Password</label>
-                                        <input id="password-field" type="password" className="form-control" name="password" required onChange={(e) => handleChange(e)} />
+                                        <label className="form-control-placeholder" for="password">Create New
+                                            Password</label>
+                                        <input id="password-field" type="password" className="form-control"
+                                               name="password" required onChange={(e) => handleChange(e)}/>
                                         <span toggle="#password-field"
-                                            className="bi bi-eye-slash field-icon toggle-password" onClick={ (e) => passwordClick(e)}></span>
+                                              className="bi bi-eye-slash field-icon toggle-password"
+                                              onClick={(e) => passwordClick(e)}></span>
                                     </div>
                                     <div className="form-group">
-                                        <label className="form-control-placeholder" for="password">Confirm Password</label>
-                                        <input id="password-field" type="password" className="form-control" name="ConfirmPass" required onChange={(e) => handleChange(e)} />
+                                        <label className="form-control-placeholder" for="password">Confirm
+                                            Password</label>
+                                        <input id="password-field" type="password" className="form-control"
+                                               name="ConfirmPass" required onChange={(e) => handleChange(e)}/>
                                         <span toggle="#password-field"
-                                            className="bi bi-eye-slash field-icon toggle-password" onClick={ (e) => passwordClick(e)}></span>
+                                              className="bi bi-eye-slash field-icon toggle-password"
+                                              onClick={(e) => passwordClick(e)}></span>
                                     </div>
                                     <div className="form-group">
                                         <button type="submit"
-                                            className="form-control btn btn-primary rounded btn-submit px-" onClick={(e) => signUp(e)}>Sign
-                                            Up</button>
+                                                className="form-control btn btn-primary rounded btn-submit px-"
+                                                onClick={(e) => signUp(e)}>Sign
+                                            Up
+                                        </button>
                                     </div>
 
                                 </form>
